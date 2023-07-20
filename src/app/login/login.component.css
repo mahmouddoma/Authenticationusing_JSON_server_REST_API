@@ -1,0 +1,13 @@
+button{
+    margin: 20px    ;
+}
+mat-form-field {
+    width: 100%;
+}
+h2 {
+    margin: 30px;
+    color: #5aba9e;
+}
+mat-label {
+    color: #5aba9e;
+}
