@@ -312,7 +312,7 @@
   />
   <span>Welcome</span>
     <a routerLink="" class="text-bg-dark">Home</a> 
-    <a routerLink="/user">User</a> 
+    <a *ngIf="isadminuser" routerLink="/user">User</a> 
     <div class="spacer"></div>
     <a routerLink="/login" class="ms-5">Log Out</a> 
    

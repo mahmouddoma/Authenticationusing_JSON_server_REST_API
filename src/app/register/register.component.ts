@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { ToastrService } from 'ngx-toastr'
@@ -24,15 +24,14 @@ export class RegisterComponent {
     isactive: this.builder.control(false)
   });
 
-  proceedregisteration() {
+proceedregisteration() {
     if (this.registerform.valid) {
-      this.service.Proceedregister(this.registerform.value).subscribe(res => {
-        this.toastr.success('Please contact admin for enable access.','Registered successfully')
-        this.router.navigate(['login'])
+      this.service.Proceedregister(this.registerform.value).subscribe(result => {
+        this.toastr.success('Please contact admin for enable access.','Registered successfully');
+        this.router.navigate(['login']);
       });
     } else {
       this.toastr.warning('Please enter valid data.')
     }
   }
-
 }

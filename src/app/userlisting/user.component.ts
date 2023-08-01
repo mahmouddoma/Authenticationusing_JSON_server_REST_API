@@ -25,7 +25,7 @@ export class UserComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit(){}
+  ngAfterViewInit(): void{}
 
   LoadUser() {
     this.service.GetAll().subscribe(res => {
@@ -38,10 +38,6 @@ export class UserComponent implements AfterViewInit {
   displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
 
   updateuser(code: any) {
-    this.OpenDialog('1000ms', '600ms', code);
-  }
-
-  OpenDialog(enteranimation: any, exitanimation: any, code: string) {
     const popup = this.dialog.open(UpdatepopupComponent, {
       enterAnimationDuration: '1000ms',
       exitAnimationDuration: '500ms',
@@ -49,9 +45,13 @@ export class UserComponent implements AfterViewInit {
       data: {
         usercode: code
       }
-    });
+    })
     popup.afterClosed().subscribe(res => {
-      this.LoadUser();
+      this.LoadUser()
     });
+  }
+
+  opendialog() {
+    
   }
 }

@@ -18,8 +18,8 @@ export class AuthService {
   Proceedregister(inputdata: any) {
     return this.http.post(this.apiurl, inputdata);
   }
-  GetRole() {
-    return this.http.get('https:/localhost:3000/role');
+  GetAllRole() {
+    return this.http.get('http:/localhost:3000/role');
   }
   
   Updateuser(code: any,inputdata: any) {

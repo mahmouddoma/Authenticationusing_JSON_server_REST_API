@@ -9,16 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-// import { UserComponent } from './user/user.component';
+// import { UserComponent } from './user/user/component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from 'src/material.module';
 import {HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { MatInputModule } from '@angular/material/input';
-// import { CustomerComponent } from './customer/customer.component';
 import { AngularPaginatorModule } from 'angular-paginator';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -29,9 +29,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     LoginComponent,
     HomeComponent,
     // UserComponent,
-    UpdatepopupComponent,
-    // CustomerComponent
+    UpdatepopupComponent  
     ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,6 +42,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     MatPaginatorModule,
     MatTableModule,
     MatInputModule,
+    CommonModule,
     ToastrModule.forRoot(),
     AngularPaginatorModule
   ],
